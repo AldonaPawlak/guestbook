@@ -2,6 +2,16 @@ main {
     width: 400px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form .input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 ul {
     padding: 0;
 }

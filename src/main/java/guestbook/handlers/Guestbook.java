@@ -16,6 +16,20 @@ public class Guestbook implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
 
+        if (exchange.getRequestMethod().equals("POST")) {
+            InputStreamReader isr = new InputStreamReader(exchange.getRequestBody(), "utf-8");
+            BufferedReader br = new BufferedReader(isr);
+            String formData = br.readLine();
+
+            Map<String, String> inputs = parseFormData(formData);
+
+            String entryName = inputs.get("name");
+            String entryMessage = inputs.get("message");
+            GuestbookEntry guestbookEntry = new GuestbookEntry(entryName, entryMessage, new Date());
+
+            guestbookEntries.add(guestbookEntry);
+        }
+
         JtwigTemplate template = JtwigTemplate.classpathTemplate("templates/guestbook.twig");
         JtwigModel model = JtwigModel.newModel();
 

@@ -16,6 +16,18 @@
                 </li>
             {% endfor %}
         </ul>
+
+        <form method="POST">
+            <label>Name:
+                <input class="input" type="text" name="name">
+            </label>
+            <label>Message:
+                <textarea class="input" name="message" maxlength="1000"></textarea>
+            </label>
+            <label>
+                <input type="submit" value="Submit">
+            </label>
+        </form>
     </main>
 
     </body>
