@@ -1,4 +1,4 @@
-package org.example;
+package guestbook;
 
 import static org.junit.Assert.assertTrue;
 
