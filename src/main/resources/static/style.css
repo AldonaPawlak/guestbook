@@ -1,0 +1,16 @@
+main {
+    width: 400px;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    padding: 15px;
+}
+
+ul li:nth-child(2n) {
+    background-color: #ee82ee;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Guestbook</title>
+    </head>
+    <body>
+    <main>
+        <h1>Simple Guestbook</h1>
+        <ul>
+            {% for entry in entries %}
+                <li>
+                    <p>Name: {{ entry.getName() }}</p>
+                    <p>Message: {{ entry.getMessage() }}</p>
+                    <p>Date: {{ entry.getDate() }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    </body>
+</html>
